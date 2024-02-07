@@ -14,30 +14,25 @@ public class App {
         System.out.println("Comenzando programa..");
         Sorts<Integer> sortMethods = new Sorts<Integer>();
         
-        for(int i = 0; i < 3000; i++){
-            GeneradorNumeros.generarYGuardarNumeros(i);
-            numeros = GeneradorNumeros.leerYGuardarEnArreglo(i);
-            sortMethods.gnomeSort(numeros,i);
+        GeneradorNumeros.generarYGuardarNumeros(3000);
+        numeros = GeneradorNumeros.leerYGuardarEnArreglo(3000);
 
-            GeneradorNumeros.generarYGuardarNumeros(i);
-            numeros = GeneradorNumeros.leerYGuardarEnArreglo(i);
-            sortMethods.gnomeSort(numeros,i);
+        for(int i = 10; i < 3000; i++){
+            
+            sortMethods.gnomeSort(Arrays.copyOfRange(numeros, 0, i),i);
 
-            GeneradorNumeros.generarYGuardarNumeros(i);
-            numeros = GeneradorNumeros.leerYGuardarEnArreglo(i);
-            sortMethods.gnomeSort(numeros,i);
 
-            GeneradorNumeros.generarYGuardarNumeros(i);
-            numeros = GeneradorNumeros.leerYGuardarEnArreglo(i);
-            sortMethods.gnomeSort(numeros,i);
+            sortMethods.gnomeSort(Arrays.copyOfRange(numeros, 0, i),i);
 
-            GeneradorNumeros.generarYGuardarNumeros(i);
-            numeros = GeneradorNumeros.leerYGuardarEnArreglo(i);
-            sortMethods.gnomeSort(numeros,i);
 
-            GeneradorNumeros.generarYGuardarNumeros(i);
-            numeros = GeneradorNumeros.leerYGuardarEnArreglo(i);
-            sortMethods.gnomeSort(numeros,i);
+            sortMethods.gnomeSort(Arrays.copyOfRange(numeros, 0, i),i);
+
+    
+            sortMethods.gnomeSort(Arrays.copyOfRange(numeros, 0, i),i);
+
+
+            sortMethods.gnomeSort(Arrays.copyOfRange(numeros, 0, i),i);
+
 
         }
         

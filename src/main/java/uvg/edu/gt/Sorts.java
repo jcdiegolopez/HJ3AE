@@ -17,5 +17,21 @@ public class Sorts<T extends Comparable<T>> {
         }
         return array;
 
-    } 
+    }
+    
+    public T[] mergeSort(T[] array,int size){
+        return null;
+    }
+
+    public T[] quickSort(T[] array,int size){
+        return null;
+    }
+
+    public T[] radixSort(T[] array,int size){
+        return null;
+    }
+
+    public T[] buubleSort(T[] array,int size){
+        return null;
+    }
 }
