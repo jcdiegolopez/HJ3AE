@@ -42,12 +42,5 @@ public class GeneradorNumeros {
 
         return arreglo;
     }
-
-    public static void limpiarArchivo() {
-        try (FileWriter writer = new FileWriter("numeros.txt")) {
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
+
