@@ -2,6 +2,7 @@ package uvg.edu.gt;
 
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 
 public class App {
@@ -12,45 +13,49 @@ public class App {
     public static void main(String[] args) {
         
         System.out.println("Comenzando programa..");
-        
         Sorts<Integer> sortMethods = new Sorts<Integer>();
         
-        for (int i = 10; i <= 3000; i += 10) {
-    GeneradorNumeros.generarYGuardarNumeros(i);
-    numeros = GeneradorNumeros.leerYGuardarEnArreglo(i);
+        GeneradorNumeros.generarYGuardarNumeros(3000);
+        numeros = GeneradorNumeros.leerYGuardarEnArreglo(3000);
 
-    // Gnome Sort
-    long gnomeStartTime = System.nanoTime();
-    sortMethods.gnomeSort(Arrays.copyOf(numeros, i), i);
-    long gnomeEndTime = System.nanoTime();
-    System.out.println("Gnome Sort - " + i + " elementos: " + (gnomeEndTime - gnomeStartTime) + " nanosegundos");
+        boolean running = true;
+        Scanner scanner = new Scanner(System.in);
 
-    // Merge Sort 
-    long mergeStartTime = System.nanoTime();
-    sortMethods.mergeSort(Arrays.copyOf(numeros, i));
-    long mergeEndTime = System.nanoTime();
-    System.out.println("Merge Sort - " + i + " elementos: " + (mergeEndTime - mergeStartTime) + " nanosegundos");
+        while(running){
 
-    // Quick Sort 
-    long quickStartTime = System.nanoTime();
-    sortMethods.quickSort(Arrays.copyOf(numeros, i));
-    long quickEndTime = System.nanoTime();
-    System.out.println("Quick Sort - " + i + " elementos: " + (quickEndTime - quickStartTime) + " nanosegundos");
+            System.out.println("Ingrese Enter para comenzar los sorts...(Ingrese 1 para salir)");
+            String opt = scanner.next();
 
-    // Radix Sort
-    long radixStartTime = System.nanoTime();
-    sortMethods.radixSort(Arrays.copyOf(numeros, i));
-    long radixEndTime = System.nanoTime();
-    System.out.println("Radix Sort - " + i + " elementos: " + (radixEndTime - radixStartTime) + " nanosegundos");
-
-    // Insertion Sort 
-    long insertionStartTime = System.nanoTime();
-    sortMethods.insertionSort(Arrays.copyOf(numeros, i));
-    long insertionEndTime = System.nanoTime();
-    System.out.println("Insertion Sort - " + i + " elementos: " + (insertionEndTime - insertionStartTime) + " nanosegundos");
-
-    GeneradorNumeros.limpiarArchivo();
-}
+            switch (opt) {
+                case "1":
+                    running = false;
+                    break;
+            
+                default:
+                System.out.println("Comenzando analisis");         
+                for(int i = 10; i < 3000; i++){
+            
+                    sortMethods.gnomeSort(Arrays.copyOfRange(numeros, 0, i),i);
+        
+        
+                    sortMethods.mergeSort(Arrays.copyOfRange(numeros, 0, i),i);
+        
+        
+                    sortMethods.quickSort(Arrays.copyOfRange(numeros, 0, i),i);
+        
+            
+                    sortMethods.radixSort(Arrays.copyOfRange(numeros, 0, i),i);
+        
+        
+                    sortMethods.bubbleSort(Arrays.copyOfRange(numeros, 0, i),i);
+        
+        
+                }
+                    break;
+            }
+            
+        }
+        
         
 
         System.out.println("Proceso Finalizado...");
