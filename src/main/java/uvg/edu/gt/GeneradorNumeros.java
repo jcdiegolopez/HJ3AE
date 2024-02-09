@@ -13,7 +13,7 @@ public class GeneradorNumeros {
             Random random = new Random();
 
             for (int i = 0; i < n; i++) {
-                Integer numero = random.nextInt(0); // Genera un número entero aleatorio
+                Integer numero = random.nextInt(0,10000); // Genera un número entero aleatorio
                 writer.write(Integer.toString(numero) + "\n");
             }
 
@@ -43,4 +43,3 @@ public class GeneradorNumeros {
         return arreglo;
     }
 }
-
