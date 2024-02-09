@@ -21,6 +21,7 @@ public class App {
         numerosOrdenados = sortMethods.bubbleSort(numeros,3000);
 
         boolean running = true;
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
         while(running){
